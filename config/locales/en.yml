@@ -30,4 +30,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  navbar:
+    models: "Models"
+    rent: "Rent something"
+    previous: "Previous rentals"
+    support: "Support"
+    lang: "HU"
+    model_list:
+      books: "Books"
+      authors: "Authors"
+      magazines: "Magazines"
+      galleries: "Galleries"
+      users: "Users"
+

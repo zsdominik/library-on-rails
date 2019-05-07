@@ -1,0 +1,13 @@
+en:
+  navbar:
+    models: "Modelek"
+    rent: "Termék kölcsönzése"
+    previous: "Előző kölcsönzéseim"
+    support: "Támogatás"
+    lang: "EN"
+    model_list:
+      books: "Könyvek"
+      authors: "Szerzők"
+      magazines: "Magazinok"
+      galleries: "Galériák"
+      users: "Felhasználók"
