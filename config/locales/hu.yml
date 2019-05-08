@@ -1,4 +1,4 @@
-en:
+hu:
   navbar:
     models: "Modelek"
     rent: "Termék kölcsönzése"
@@ -10,4 +10,5 @@ en:
       authors: "Szerzők"
       magazines: "Magazinok"
       galleries: "Galériák"
+      publishers: "Kiadók"
       users: "Felhasználók"

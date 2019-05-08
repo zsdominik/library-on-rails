@@ -21,12 +21,12 @@
             <%= t 'navbar.models' %>
           </a>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Books</a>
-            <a class="dropdown-item" href="#">Authors</a>
-            <a class="dropdown-item" href="#">Magazines</a>
-            <a class="dropdown-item" href="#">Galleries</a>
-            <a class="dropdown-item" href="#">Publishers</a>
-            <a class="dropdown-item" href="#">Users</a>
+            <%= link_to t('navbar.model_list.books'), "/books" , class: "dropdown-item"%>
+            <%= link_to t('navbar.model_list.authors'), "/authors" , class: "dropdown-item"%>
+            <%= link_to t('navbar.model_list.magazines'), "/magazines" , class: "dropdown-item"%>
+            <%= link_to t('navbar.model_list.galleries'), "/galleries" , class: "dropdown-item"%>
+            <%= link_to t('navbar.model_list.publishers'), "/publishers" , class: "dropdown-item"%>
+            <%= link_to t('navbar.model_list.users'), "/users" , class: "dropdown-item"%>
           </div>
         </div>
         
@@ -45,6 +45,8 @@
         <a class="py-2 d-none d-md-inline-block" href="#">EN</a>
       </div>
     </nav>
-    <%= yield %>
+    <div class="container"> 
+      <%= yield %>
+    </div>
   </body>
 </html>
