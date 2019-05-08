@@ -4,5 +4,7 @@
 
 #this should add datatable features
 (($) ->
-        $('#books_table').dataTable()
+        $(document).on 'turbolinks:load', () -> (
+                $('#books_table').DataTable()
+        )
 ) jQuery
