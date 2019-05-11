@@ -1,5 +1,7 @@
 @import "bootstrap";
 @import "datatables";
+@import "toastr";
+@import "font-awesome";
 
 html {
   font-size: 14px;
@@ -49,4 +51,8 @@ html {
 .site-header a:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.thumbnail {
+  height: 150px;
 }

@@ -10,7 +10,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    create_table :users_books, id: false do |t|
+    create_table :books_users, id: false do |t|
       t.belongs_to :user, index: true
       t.belongs_to :book, index: true
     end

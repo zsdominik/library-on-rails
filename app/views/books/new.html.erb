@@ -1,8 +1,9 @@
 <h1>Create new Book</h1>
-<%= simple_form_for @book do |f| %>
+<%= simple_form_for @book, multipart: true do |f| %>
     <%= f.input :title %>
     <%= f.input :isbn %>
     <%= f.input :description, as: :text %>
-    <%= f.input :image, as: :file %>
+    <%= f.association :author %>
+    <%= f.file_field :image %>
     <%= f.button :submit, "Create Book", class: "btn-primary" %>
 <% end %>

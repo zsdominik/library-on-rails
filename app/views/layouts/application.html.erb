@@ -40,8 +40,18 @@
         <a class="py-2 d-none d-md-inline-block" href="#">Previous rentals</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
         <a class="py-2 d-none d-md-inline-block" href="#">EN</a>
+       <%= link_to "Registration", "/users/new", class: "py-2 d-none d-md-inline-block" %>
       </div>
     </nav>
+    <% unless flash.empty? %>
+      <script type="text/javascript">
+        <% flash.each do |f| %>
+          <% type = f[0].gsub('alert', 'error').gsub('notice', 'info') %>
+          toastr['<%= type %>']('<%= f[1] %>', '<%= type %>');
+        <% end %>
+      </script>
+    <% end %>
+    <div id="modal-holder"></div>
     <div class="container">
       <%= yield %>
     </div>
