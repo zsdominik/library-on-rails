@@ -32,19 +32,11 @@
             <%= link_to t('navbar.model_list.users'), "/users" , class: "dropdown-item" %>
           </div>
         </div>
-        <div class="dropdown show">
-          <a class="py-2 d-none d-md-inline-block dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Rent something
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Books</a>
-            <a class="dropdown-item" href="#">Magazines</a>
-            <a class="dropdown-item" href="#">Galleries</a>
-          </div>
-        </div>
-        <a class="py-2 d-none d-md-inline-block" href="#">Previous rentals</a>
+
+        <%= link_to "Previous rentals", previous_rentals_list_path, class: "py-2 d-none d-md-inline-block" if current_user%>
         <a class="py-2 d-none d-md-inline-block" href="#">Support</a>
         <a class="py-2 d-none d-md-inline-block" href="#">EN</a>
+        <a class="py-2 d-none d-md-inline-block" href="#"></a>
         <% if current_user %>
           <%= link_to "Log Out", logout_path, class: "py-2 d-none d-md-inline-block" %>
         <% end %>

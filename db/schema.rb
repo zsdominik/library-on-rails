@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_11_184133) do
+ActiveRecord::Schema.define(version: 2019_05_12_095122) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -34,17 +34,17 @@ ActiveRecord::Schema.define(version: 2019_05_11_184133) do
   end
 
   create_table "authors", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "books", force: :cascade do |t|
-    t.string "title"
-    t.string "isbn"
+    t.string "title", null: false
+    t.string "isbn", null: false
     t.string "description"
     t.binary "image"
-    t.integer "author_id"
+    t.integer "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_books_on_author_id"
@@ -70,19 +70,27 @@ ActiveRecord::Schema.define(version: 2019_05_11_184133) do
     t.integer "publisher_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.binary "image"
     t.index ["publisher_id"], name: "index_magazines_on_publisher_id"
   end
 
+  create_table "magazines_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "magazine_id"
+    t.index ["magazine_id"], name: "index_magazines_users_on_magazine_id"
+    t.index ["user_id"], name: "index_magazines_users_on_user_id"
+  end
+
   create_table "publishers", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
+    t.string "username", null: false
     t.string "password"
-    t.string "email"
+    t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
@@ -93,13 +101,6 @@ ActiveRecord::Schema.define(version: 2019_05_11_184133) do
     t.integer "gallery_id"
     t.index ["gallery_id"], name: "index_users_galleries_on_gallery_id"
     t.index ["user_id"], name: "index_users_galleries_on_user_id"
-  end
-
-  create_table "users_magazines", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "magazine_id"
-    t.index ["magazine_id"], name: "index_users_magazines_on_magazine_id"
-    t.index ["user_id"], name: "index_users_magazines_on_user_id"
   end
 
 end

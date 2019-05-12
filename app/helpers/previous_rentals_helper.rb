@@ -1,0 +1,2 @@
+module PreviousRentalsHelper
+end

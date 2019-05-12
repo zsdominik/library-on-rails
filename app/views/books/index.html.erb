@@ -24,9 +24,9 @@
       <tr>
         <td><%= image_tag(book.image, :class => "thumbnail rounded") if book.image.attached? %></td>
         <td><%= link_to(book.title, book) %></td>
-        <td><%= link_to(book.author.name, book.author) %></td>
+        <td><%= link_to(book.author.name, book.author) if !book.author.nil? %></td>
         <td><%= book.isbn %></td>
-        <td><%= book.description %></td>
+        <td class="more"><%= book.description %></td>
         <td><%= link_to 'Delete',
                          book_path(book),
                          method: :delete,

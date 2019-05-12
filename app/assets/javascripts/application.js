@@ -20,6 +20,9 @@
 //= require bootstrap
 //= require toastr
 //= require data-confirm-modal
+// Bootstrap 4
+//= require rails.validations
+//= require rails.validations.simple_form.bootstrap4
 
 /*global toastr*/
 toastr.options = {

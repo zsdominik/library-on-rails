@@ -1,2 +1,8 @@
-<h1>Magazines#new</h1>
-<p>Find me in app/views/magazines/new.html.erb</p>
+<h1>Create new Magazine</h1>
+<%= simple_form_for @magazine, multipart: true do |f| %>
+  <%= f.input :name, required: false %>
+  <%= f.input :description, as: :text %>
+  <%= f.association :publisher, required: true %>
+  <%= f.file_field :image %>
+  <%= f.button :submit, "Create Magazine", class: "btn-primary" %>
+<% end %>

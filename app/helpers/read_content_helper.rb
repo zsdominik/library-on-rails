@@ -1,0 +1,2 @@
+module ReadContentHelper
+end

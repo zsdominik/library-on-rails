@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def new
@@ -13,29 +15,25 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Registration succeed!"
-=begin
-      redirect_to :controller => 'users', :action => 'login'
-=end
+      redirect_to login_path
     else
       flash[:error] = "Registration error!"
       render 'new'
     end
   end
 
-  def login
-
-  end
-
   def user_params
     params.require(:user).permit(:username, :password, :email)
   end
 
-  def edit
-  end
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      flash[:success] = "User deleted succesfully!"
+    else
+      flash[:error] = "Error while deleting book!"
+    end
 
-  def delete
-  end
-
-  def list
+    redirect_to :controller => 'users', :action => 'index'
   end
 end

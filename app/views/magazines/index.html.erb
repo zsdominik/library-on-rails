@@ -1,2 +1,35 @@
-<h1>Magazines#index</h1>
-<p>Find me in app/views/magazines/index.html.erb</p>
+<div class="row">
+  <div class="col-md-5">
+    <h1>List of Magazines</h1>
+  </div>
+  <div class="col-md-2 offset-md-5 text-right my-auto">
+    <%= link_to '<button class="btn btn-success">
+            Create
+        </button>'.html_safe, "/magazines/new" %>
+  </div>
+</div>
+<table id="books_table" class="table table-striped table-bordered">
+  <thead class="thead-dark">
+  <tr>
+    <th>Cover</th>
+    <th scope="col">Name</th>
+    <th>Publisher</th>
+    <th scope="col">Description</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @magazines.each do |magazine| %>
+    <tr>
+      <td><%= image_tag(magazine.image, :class => "thumbnail rounded") if magazine.image.attached? %></td>
+      <td><%= link_to(magazine.name, magazine) %></td>
+      <td><%= link_to(magazine.publisher.name, magazine.publisher) %></td>
+      <td class="more"><%= magazine.description %></td>
+      <td><%= link_to 'Delete',
+                      magazine_path(magazine),
+                      method: :delete,
+                      data: { confirm: 'Are you sure?' } %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

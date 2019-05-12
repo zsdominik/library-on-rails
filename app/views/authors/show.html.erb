@@ -1,2 +1,5 @@
-<h1>Authors#show</h1>
-<p>Find me in app/views/authors/show.html.erb</p>
+<h1>Edit Author</h1>
+<%= simple_form_for @author do |f| %>
+  <%= f.input :name %>
+  <%= f.button :submit, "Save", class: "btn-primary" %>
+<% end %>

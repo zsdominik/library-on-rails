@@ -1,2 +1,5 @@
-<h1>Authors#new</h1>
-<p>Find me in app/views/authors/new.html.erb</p>
+<h1>Create Author</h1>
+<%= simple_form_for @author, multipart: true do |f| %>
+  <%= f.input :name, required: true %>
+  <%= f.button :submit, "Create Author", class: "btn-primary" %>
+<% end %>
